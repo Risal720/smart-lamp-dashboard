@@ -15,10 +15,10 @@ placeholder = st.empty()
 def get_data():
     try:
         conn = mysql.connector.connect(
-            host="bseedukya7gi08pqaq0z-mysql.services.clever-cloud.com",
-            user="uwddtw93oxttkgox",
-            passwd="2FzfDbzE17Nj8lLzH0zW",
-            database="bseedukya7gi08pqaq0z",
+            host=st.secrets["DB_HOST"],
+            user=st.secrets["DB_USER"],
+            passwd=st.secrets["DB_PASS"],
+            database=st.secrets["DB_NAME"],
             port=3306
         )
         query = "SELECT id_tiang, nilai_cahaya, status_lampu, waktu FROM tbl_monitoring ORDER BY waktu DESC LIMIT 20"
